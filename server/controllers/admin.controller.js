@@ -4,7 +4,7 @@ import commentModel from "../models/comment.model.js";
 
 export const adminLogin = async (req, res) => {
   try {
-    console.log(req.body);
+    // console.log(req.body);
     const { email, password } = req.body;
     if (
       email !== process.env.ADMIN_EMAIL ||
@@ -16,7 +16,7 @@ export const adminLogin = async (req, res) => {
     const token = jwt.sign({ email }, process.env.JWT_SECRET_KEY, {
       expiresIn: "1d",
     });
-    console.log(token);
+    // console.log(token);
     res.status(200).json({ message: "Login successful", token });
   } catch (error) {
     console.error(error);

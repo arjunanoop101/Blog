@@ -5,7 +5,7 @@ import commentModel from "../models/comment.model.js";
 
 export const addBlog = async (req, res) => {
   try {
-    console.log("req.body", req.body.blog);
+    // console.log("req.body", req.body.blog);
     const { title, subTitle, description, category, isPublished } = JSON.parse(
       req.body.blog
     );
@@ -13,7 +13,7 @@ export const addBlog = async (req, res) => {
     const imageFile = req.file; //should create middleware for file upload
 
     // console.log("imageFile", imageFile);
-    console.log(title, subTitle, description, category, isPublished, imageFile);
+    // console.log(title, subTitle, description, category, isPublished, imageFile);
     //check if all fields are present
     if (!title || !subTitle || !description || !category || !imageFile) {
       return res.status(400).json({ message: "All fields are required" });
@@ -95,7 +95,7 @@ export const togglePublish = async (req, res) => {
     const blog = await blogModel.findById(id);
     blog.isPublished = !blog.isPublished;
     await blog.save();
-    console.log("reached here");
+    // console.log("reached here");
     return res.status(200).json({ message: "Blog updated successfully" });
   } catch (error) {
     res.status(500).json({ message: "Internal server error" });
@@ -106,7 +106,7 @@ export const addComment = async (req, res) => {
   try {
     const { blog, name, content } = req.body;
     await commentModel.create({ blog, name, content });
-    console.log("comment in backend", req.body);
+    // console.log("comment in backend", req.body);
     return res.status(200).json({ message: "Comment added successfully" });
   } catch (error) {
     res.status(500).json({ message: "Internal server error" });
@@ -119,7 +119,7 @@ export const getBlogComments = async (req, res) => {
     const comments = await commentModel
       .find({ blog: blogId, isApproved: true })
       .sort({ createdAt: -1 });
-    console.log("comments from backend", comments);
+    // console.log("comments from backend", comments);
     return res.status(200).json(comments);
   } catch (error) {
     res.status(500).json({ message: "Internal server error" });

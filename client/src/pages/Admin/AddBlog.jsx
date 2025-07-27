@@ -16,9 +16,6 @@ const AddBlog = () => {
   const [isPublished, setIsPublished] = useState(false);
 
   const generateContent = async () => {};
-  const oSubmitHandler = async (e) => {
-    e.preventDefault();
-  };
 
   const onSubmitHandler = async (e) => {
     try {
@@ -123,7 +120,7 @@ const AddBlog = () => {
           {blogCategories.map((item, index) => {
             return (
               <option value={item} key={index}>
-                {index}
+                {item}
               </option>
             );
           })}
