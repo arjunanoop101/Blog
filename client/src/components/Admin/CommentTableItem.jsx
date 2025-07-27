@@ -7,6 +7,7 @@ const CommentTableItem = ({ comment, fetchComments }) => {
   const { blog, createdAt, _id, name, content } = comment;
   const BlogDate = new Date(createdAt);
   const { axios } = useAppContext();
+  // console.log("blog", blog);
   const approveComment = async () => {
     try {
       const response = await axios.post("/api/admin/approve-comment", {
@@ -42,11 +43,11 @@ const CommentTableItem = ({ comment, fetchComments }) => {
       toast.error("Failed to delete comment");
     }
   };
-  console.log(comment);
+  // console.log(comment);
   return (
     <tr className="order-y border-gray-300">
       <td className="px-6 py-4">
-        <b className="font-medium text-gray-600">Blog : {blog}</b>
+        <b className="font-medium text-gray-600">Blog : {blog.title}</b>
         <br />
         <br />
         <b className="font-medium text-gray-600">Name : {name || "N/A"}</b>

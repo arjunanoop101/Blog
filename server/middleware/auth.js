@@ -8,7 +8,7 @@ export const auth = (req, res, next) => {
 
   try {
     jwt.verify(token, process.env.JWT_SECRET_KEY);
-    console.log("token verified from auth.js");
+    // console.log("token verified from auth.js");
 
     next();
   } catch (error) {

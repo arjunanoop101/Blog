@@ -49,7 +49,7 @@ export const addBlog = async (req, res) => {
 
     return res.status(200).json({ message: "Blog added successfully" });
   } catch (error) {
-    console.error(error.message);
+    // console.error(error.message);
     return res.status(500).json({ message: "Internal server error" });
   }
 };
