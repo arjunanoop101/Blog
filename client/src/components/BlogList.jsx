@@ -7,16 +7,22 @@ import { useAppContext } from "../context/AppContext";
 const BlogList = () => {
   const [menu, setMenu] = useState("All");
   const { blogs, input } = useAppContext();
+
   const filteredBlogs = () => {
+    if (!Array.isArray(blogs)) return [];
+
     if (input === "") {
       return blogs;
     }
+
     return blogs.filter(
       (blog) =>
-        blog.title.toLowerCase().includes(input.toLowerCase()) ||
-        blog.category.toLowerCase().includes(input.toLowerCase())
+        blog.title?.toLowerCase().includes(input.toLowerCase()) ||
+        blog.category?.toLowerCase().includes(input.toLowerCase())
     );
   };
+
+  console.log("blogs from context", blogs);
 
   return (
     <div>
