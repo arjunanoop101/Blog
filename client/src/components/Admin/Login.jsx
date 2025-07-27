@@ -18,7 +18,7 @@ const Login = () => {
 
       if (response.status === 200) {
         const { token } = response.data;
-        console.log("token", token);
+        // console.log("token", token);
         setToken(token);
         localStorage.setItem("token", token);
         axios.defaults.headers.common["Authorization"] = token;
@@ -28,7 +28,7 @@ const Login = () => {
         toast.error(error?.response?.data?.message || "soemthing went wrong");
       }
     } catch (error) {
-      console.log("reached here");
+      // console.log("reached here");
       console.log(error);
       // toast.error("something went wrong");
       toast.error(error?.response?.data?.message || "soemthing went wrong");
@@ -40,6 +40,12 @@ const Login = () => {
         <div className="flex flex-col items-center justify-center">
           <div className="w-full py-6 text-center">
             <h1 className="text-3xl font-bold">Admin Login</h1>
+            <p className="font-light text-gray-400">
+              For testing email : arjun@gmail.com{" "}
+            </p>
+            <p className="font-light text-gray-400 mb-2">
+              password : ADMINPASSWORD
+            </p>
             <p className="font-light">Enter your email and password</p>
           </div>
           <form onSubmit={handleSubmit}>
