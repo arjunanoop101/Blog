@@ -2,18 +2,26 @@
 
 A full-featured Blog Website built using the **MERN Stack** (MongoDB, Express, React, Node.js). It supports admin login with **JWT authentication**, and blog post images are managed via **ImageKit.io** for optimized delivery.
 
+## 🌐 Live Demo
+
+🔗 [Visit the Website](https://my-blog-client-one.vercel.app/)
+
+> 💻 **Admin Login Credentials**
+> - **Email**: `arjun@gmail.com`  
+> - **Password**: `ADMINPASSWORD`
+
 ---
 
 ## 🚀 Features
 
-- ✅ Admin authentication with JWT
-- 🖼️ Image uploads and optimization via ImageKit.io
-- 📝 Create, edit, and delete blog posts (admin only)
-- 💬 Comment on posts (users)
-- 🔍 View all blogs with category-based filtering
-- 📱 Responsive design using React
-- 🧠 Clean and modular backend API with Express
-- 🔐 Secure password handling with bcrypt
+- ✅ Admin authentication using JWT
+- 🖼️ Image uploads and CDN optimization via ImageKit.io
+- 📝 Admin can create, edit, and delete blog posts
+- 💬 Users can comment on blog posts
+- 🔍 Filter blogs by category
+- 📱 Fully responsive design
+- 🧠 RESTful backend APIs with Express
+- 🔐 Secure password hashing using bcrypt
 
 ---
 
@@ -23,14 +31,14 @@ A full-featured Blog Website built using the **MERN Stack** (MongoDB, Express, R
 - React
 - React Router
 - Axios
-- Tailwind CSS 
+- Tailwind CSS
 
 **Backend:**
 - Node.js
-- Express
-- MongoDB (with Mongoose)
-- JWT for Authentication
-- bcryptjs for hashing passwords
+- Express.js
+- MongoDB + Mongoose
+- JWT (JSON Web Tokens)
+- bcryptjs
 - ImageKit SDK
 
 ---
